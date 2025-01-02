@@ -43,15 +43,15 @@ const handleSubmit = async () => {
         v-model="username"
       />
       <FormKit
-        type="text"
+        type="password"
         name="password"
         label="Password"
         placeholder="Enter the password"
         validation="required|length:3"
         v-model="password"
       />
+      <RouterLink class="text-blue_ block text-end mb-2" to="/register">Register</RouterLink>
       <FormKit type="submit" @click="handleSubmit"> Login </FormKit>
-      <RouterLink class="text-blue_ block text-end" to="/register">Register</RouterLink>
     </div>
   </div>
 </template>
