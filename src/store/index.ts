@@ -21,3 +21,13 @@ export const Register = async (obj: RegisterType) => {
     return { error: err }
   }
 }
+
+export const allPost = async () => {
+  try {
+    const result = await api.get('/post')
+
+    return result.data
+  } catch (err) {
+    return { error: err }
+  }
+}
