@@ -24,11 +24,11 @@ const handleSubmit = async () => {
   } else {
     toast.success('Logged succesfully')
     localStorage.setItem('token', JSON.stringify(result.token))
+    localStorage.setItem('user', JSON.stringify(result.user))
     router.push('/')
   }
   router.push('/')
 }
-
 </script>
 
 <template>

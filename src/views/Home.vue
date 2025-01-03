@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Post from '@/components/Home/Post.vue'
+import PostModal from '@/components/PostModal.vue'
 import { allPost } from '@/store'
 import { onMounted, ref, toRaw } from 'vue'
 
@@ -10,13 +11,12 @@ onMounted(async () => {
   const result = await allPost()
   posts.value = result
   loading.value = false
-  console.log(toRaw(posts.value));
 })
-
 </script>
 
 <template>
   <div v-for="item in posts">
     <Post v-if="!loading" :posts="item" />
+    <PostModal />
   </div>
 </template>

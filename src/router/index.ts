@@ -51,8 +51,6 @@ router.beforeEach((to, from, next) => {
   const token = getToken()
   if (to.meta.requiredAuth && !token) {
     next({ name: 'login' })
-  } else if (to.name == 'login' || (to.name == 'register' && token)) {
-    next({ name: 'home' })
   }
 
   next()

@@ -5,6 +5,7 @@ import SearchIcon from '@/icons/SearchIcon.vue'
 import type { List } from '@/models/navbar'
 import profileImg from '@/assets/img/profile.jpg'
 import NewPostIcon from '@/icons/NewPostIcon.vue'
+import { usePostModalStore } from '@/states/post'
 
 const list: List[] = [
   {
@@ -20,6 +21,8 @@ const list: List[] = [
     content: 'Profile',
   },
 ]
+
+const postModalStore = usePostModalStore();
 </script>
 
 <template>
@@ -38,6 +41,6 @@ const list: List[] = [
     class="text-white hidden items-center lg:flex gap-2.5 bg-blue_ py-[11px] px-[20px] mt-4 rounded-[999px]"
   >
     <NewPostIcon />
-    <span>New Post</span>
+    <span @click="postModalStore.toggleModal">New Post</span>
   </button>
 </template>
